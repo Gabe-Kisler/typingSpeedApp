@@ -8,6 +8,7 @@ public class Main {
 		String usersFilePath = "C:\\Programming\\typingSpeedApp\\users.csv";
 		
 		loginScreenGUI loginGUI = new loginScreenGUI (usersFilePath);
+		loginGUI.initializeLoginGUI();
 		//typingSpeedAppGUI gui = new typingSpeedAppGUI(filePath);
 		
 		
