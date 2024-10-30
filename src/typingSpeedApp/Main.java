@@ -7,7 +7,7 @@ public class Main {
 		String filePath = "C:\\Programming\\typingSpeedApp\\words.csv";
 		String usersFilePath = "C:\\Programming\\typingSpeedApp\\users.csv";
 		
-		loginScreenGUI loginGUI = new loginScreenGUI (usersFilePath);
+		GUILoginScreen loginGUI = new GUILoginScreen (usersFilePath);
 		loginGUI.initializeLoginGUI();
 		//typingSpeedAppGUI gui = new typingSpeedAppGUI(filePath);
 		

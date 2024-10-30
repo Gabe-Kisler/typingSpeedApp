@@ -3,42 +3,21 @@ package typingSpeedApp;
 import java.io.*;
 import java.util.*;
 
-public class LoginLogic {
 
-	String filePath = "C:\\Programming\\typingSpeedApp\\words.csv";
-	String usersFilePath = "C:\\Programming\\typingSpeedApp\\users.csv";
+public class LogicCreateAccountScreen {
+
 	ArrayList<String> userNames;
 	ArrayList<String> passwords;
-
 	
-	public LoginLogic (String usersFilePath) {
+	public LogicCreateAccountScreen (String usersFilePath) {
 		userNames = new ArrayList<>();
 		passwords = new ArrayList<>();
-
-		
 		try {
 			loadUsersFromFile (usersFilePath);
 		} catch (FileNotFoundException e) {
 			
 		}
 	}
-	
-	
-	public boolean isUser (String userNameString, String passwordString) {
-		String trimmedUser = userNameString.trim();
-		String trimmedPassword = passwordString.trim();
-		
-		for (String userName : userNames) {
-			if (trimmedUser.equals(userName.trim())) {
-				int indexOfUser = userNames.indexOf(userName);
-				if (trimmedPassword.equals(passwords.get(indexOfUser).trim())) {
-					return true;
-				}
-			}
-		}
-	return false;
-	}
-	
 	
 	public void loadUsersFromFile (String usersFilePath) throws FileNotFoundException {
 		File usersFile = new File (usersFilePath);
@@ -73,8 +52,8 @@ public class LoginLogic {
 	}
 	
 	public void addUsersToFile (String usersFilePath, String newUser, String newPassword) throws IOException {
-		System.out.print("addUsers method test");
 		File usersFile = new File (usersFilePath);
+		
 		
 		try (FileWriter writer = new FileWriter(usersFile, true)) {
 			
@@ -95,8 +74,25 @@ public class LoginLogic {
 			
 			
 		}
+	
+}
+	
+	public boolean userNameExists (String userNameString) {
+		System.out.print("userNameExists method test");
+		
+		String trimmedUser = userNameString.trim();
+		
+		for (String userName : userNames) {
+			if (trimmedUser.equals(userName.trim())) {
+				return true;
+			}
+			
+		}
+		
+		return false;
+	}
+	
+	public void updatePassword (String newPass) {
+		
 	}
 }
-
-		
-

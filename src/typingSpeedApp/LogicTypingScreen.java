@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.*;
 
-public class MainLogic {
+public class LogicTypingScreen {
 	
 	ArrayList<String> words;
 	String currentWord;
 	
-	public MainLogic (String filePath) {
+	public LogicTypingScreen (String filePath) {
 		words = new ArrayList<>();
 		try {
 			loadWordsFromFile(filePath);
@@ -60,4 +60,33 @@ public class MainLogic {
 		
 		return wordOutput.toString();
 	}
+	
+	public int getTypingDelay (int time) {
+		
+			
+		
+		return 10;
+	}
+	/*
+	public double getWPM () {
+		double WPM;
+		
+		
+		
+		return WPM;
+		
+		
+	}
+	
+	public int getWordsTyped (int numChars, int wordsTyped) {
+
+		
+		if (numChars >= 5) {
+			wordsTyped++;
+		}
+		
+		return wordsTyped;
+	}
+	*/
+	
 }
